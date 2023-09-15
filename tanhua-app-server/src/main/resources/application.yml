@@ -25,3 +25,15 @@ tanhua:
     templateCode: SMS_106590012
     accessKey: LTAI4GKgob9vZ53k2SZdyAC7
     secret: LHLBvXmILRoyw0niRSBuXBZewQ30la
+
+  oss:
+    accessKey: LTAI4GKgob9vZ53k2SZdyAC7
+    secret: LHLBvXmILRoyw0niRSBuXBZewQ30la
+    endpoint: oss-cn-beijing.aliyuncs.com
+    bucketName: tanhua001
+    url: https://tanhua001.oss-cn-beijing.aliyuncs.com/
+
+  aip:
+    appId: 24021388
+    apiKey: ZnMTwoETXnu4OPIGwGAO2H4G
+    secretKey: D4jXShyinv5q26bUS78xRKgNLnB9IfZh
