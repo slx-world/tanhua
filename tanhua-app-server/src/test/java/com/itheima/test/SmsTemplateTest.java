@@ -23,7 +23,6 @@ public class SmsTemplateTest {
     @Test
     public void testSendSms() {
         smsTemplate.sendSms("12345678910", "4567");
-
     }
 
 }

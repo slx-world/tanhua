@@ -23,15 +23,35 @@ public class LoginController {
     private UserService userService;
 
     /**
-     * 用户登录——发送验证码
+     * 验证码检验登录
+     * @param map
+     * @return
+     */
+    @PostMapping("/loginVerification")
+    public ResponseEntity loginVerification(@RequestBody Map map) {
+        // 1、调用map集合获取请求参数
+        String phone = (String) map.get("phone");
+        String code = (String) map.get("verificationCode");
+
+        // 2、调用userService完成用户登录
+        Map retMap = userService.loginVerification(phone, code);
+
+        // 3、构造返回
+        return ResponseEntity.ok(retMap);
+    }
+
+    /**
+     * 获取登录验证码
+     * @param map
+     * @return
      */
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody Map map) {
-        // 1、获取手机号码
-        String mobile = (String) map.get("phone");
+        String phone = (String) map.get("phone");
+        userService.sendMsg(phone);
 
-        // 2、调用service发送短信
-        return userService.sendMsg(mobile);
+        // return ResponseEntity.status(500).body("出错啦！");
+        return ResponseEntity.ok(null); // 正常返回状态码200
     }
 
 }
